@@ -9,6 +9,7 @@ var img_array=[
   "./imagenes/Fachada_puerta_abierta_both_on.png"
   ];
 var indice=0;
+var inicioweb=0;
 
 function cambiarImagen() {
   indice=(indice+1)%8;
@@ -19,15 +20,27 @@ function cambiarImagen() {
 function ocultarSmartphone(){
   var celular=document.getElementById('smartphone');
   var btn_t_webcam=document.getElementById('btn-t-webcam')
-  if(celular.style.display == 'block'){
-    celular.style.display ='none';
-    btn_t_webcam.value='Mostrar';
-  }
-
-  else{
+  if(inicioweb == 0){
+    webcamOn();
     celular.style.display ='block';
     btn_t_webcam.value='Ocultar';
+    inicioweb=1;
   }
+  else{
+
+    if(celular.style.display == 'none'){
+      celular.style.display ='block';
+      btn_t_webcam.value='Ocultar';
+    }
+
+    else{
+
+      celular.style.display ='none';
+      btn_t_webcam.value='Mostrar';
+
+    }
+  }
+
 }
 
 function toogleDoor(){

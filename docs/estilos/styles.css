@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body{
+  font-size: 100%;
+}
+h1{
+  font: normal 2.5em Verdana, Genova, sans-serif;
+  width: 50%;
+  background-color: #EBFEEA;
+  border-radius: 10px;
+  margin: 15px auto;
+  text-align: center;
+  padding: 15px;
+  color: #031c01;
+  text-shadow: #848784 3px 3px 4px;
+
+}
+section{
+  width: 49%;
+  background-color: #EBFEEA;
+  text-align: right;
+  border-top: 1px dashed #999999;
+  float: left;
+
+}
+
+figure{
+  width: #inherit;
+  /*background-color: #c3c680;*/
+}
+img{
+  width: #inherit;
+  /*background-color: #83c680;*/
+}
+footer{
+  clear: both;
+  text-align: center;
+
+}
+#seccion2{
+  text-align: left;
+  position: relative;
+}
+
+#frame-webcam{
+  /*padding-top: 20px*/
+  position: absolute;
+  top: 100px
+  left:50px
+}
+#frame-cellphone{
+  float: left;
+}
+#frame-casa{
+  float: right;
+}
+
+#frame-botonera-casa{
+  clear: both;
+
+}
+.boton_personalizado{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 100;
+    font-size: 15px;
+    color: #005502;
+    background-color: rgba(34,148,36,0.20);
+    border-radius: 30px;
+    border: 1px solid #5A625A;
+  }
+.contenedor_boton {
+  float: right;
+  position: relative;
+  float: left;
+  width: 320px;
+  height: 255px
+
+  overflow: hidden;
+  margin: 0 15px 15px 0;
+}
+.info_escondida{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200px;
+  color: #FFF;
+  padding: 5px;
+}
+
+div:hover .info_escondida {
+  display: block;
+}

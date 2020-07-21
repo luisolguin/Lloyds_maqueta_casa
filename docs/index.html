@@ -7,37 +7,80 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./estilos/reset.css" />
+    <link rel="stylesheet" href="./estilos/styles.css" />
     <title>Hola Mundo!</title>
   </head>
   <body>
     <header>
-      <h3> Maqueta del la casa de Lloyd's</h3>
+      <h1> Maqueta del la casa de Lloyd's</h1>
     </header>
 
-    <section>
-      <figure>
-        <img id="imagenCasa" onclick="cambiarImagen()" src="./imagenes/Fachada_puerta_cerrada.png" />
-      </figure>
-      <input id="btn-t-puerta" type="submit" value="Abrir puerta" onclick="toogleDoor()"  />
-    </section>
+    <!--<div>-->
+      <section>
+        <div id="frame-casa">
+          <figure >
+            <img id="imagenCasa" height="450" width="280" src="./imagenes/Fachada_puerta_cerrada.png" />
+          </figure>
+        </div>
 
-    <section>
-      <figure>
-        <img  src="./imagenes/Celular_vacio.png" />
-      </figure>
-      <div id="smartphone">
-        <figure>
-          <video src="" id="webcam" autoplay=true></video>
-        </figure>
-      </div>
-      <button onclick="webcamOn()">Iniciar webcam</button>
+        <div class="contenedor_boton">
+          <a class="boton_personalizado" href="https://lloydscorp.com/foco-inteligente-lc-1192/" target="_blank">i</a>
+          <div class="info_escondida">
+            <p>Foco inteligente LC-1192</p>
+          </div>
+        </div>
 
-      <input id="btn-t-foco-iz" type="submit" value="L On" onclick="toggleFocusL()"  />
-      <input id="btn-t-foco-de" type="submit" value="R On" onclick="toggleFocusR()"  />
-      <input id="btn-t-webcam" type="submit" value="mostrar" onclick="ocultarSmartphone()"  />
-      
-    </section>
+        <div class="contenedor_boton">
+          <a class="boton_personalizado" href="https://lloydscorp.com/cerradura-lc-1236-y-lc-1218/" target="_blank">i</a>
+          <div class="info_escondida">
+            <p>Cerradura Inteligente LC-1218</p>
+
+          </div>
+        </div>
+
+        <div class="contenedor_boton">
+          <a class="boton_personalizado" href="https://lloydscorp.com/camara-ip-inteligente-lc-1221/" target="_blank">i</a>
+          <div class="info_escondida">
+            <p>Camara IP LC-1221</p>
+
+          </div>
+        </div>
+
+
+
+        <div  id="frame-botonera-casa">
+          <input id="btn-t-puerta" type="submit" value="Abrir puerta" onclick="toogleDoor()"  />
+        </div>
+
+
+
+
+      </section>
+
+      <section id="seccion2">
+        <div id="frame-cellphone">
+          <figure >
+            <img  height="450" width="200" src="./imagenes/Celular_vacio.png" />
+          </figure>
+        </div>
+
+
+        <div id="frame-webcam">
+          <figure  id="smartphone">
+            <video src="" id="webcam" autoplay=true height="150" width="200"></video>
+          </figure>
+        </div>
+        <!--<button onclick="webcamOn()">Iniciar webcam</button>-->
+
+        <input id="btn-t-foco-iz" type="submit" value="L On" onclick="toggleFocusL()"  />
+        <input id="btn-t-foco-de" type="submit" value="R On" onclick="toggleFocusR()"  />
+        <input id="btn-t-webcam" type="submit" value="mostrar" onclick="ocultarSmartphone()"  />
+
+      </section>
+
+    <!--</div>-->
+
 
     <footer>
       <small>Derechos Reservados</small>
