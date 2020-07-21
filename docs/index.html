@@ -19,13 +19,26 @@
       <figure>
         <img id="imagenCasa" onclick="cambiarImagen()" src="./imagenes/Fachada_puerta_cerrada.png" />
       </figure>
+      <input id="btn-t-puerta" type="submit" value="Abrir puerta" onclick="toogleDoor()"  />
     </section>
 
     <section>
       <figure>
         <img  src="./imagenes/Celular_vacio.png" />
       </figure>
+      <div id="smartphone">
+        <figure>
+          <video src="" id="webcam" autoplay=true></video>
+        </figure>
+      </div>
+      <button onclick="webcamOn()">Iniciar webcam</button>
+
+      <input id="btn-t-foco-iz" type="submit" value="L On" onclick="toggleFocusL()"  />
+      <input id="btn-t-foco-de" type="submit" value="R On" onclick="toggleFocusR()"  />
+      <input id="btn-t-webcam" type="submit" value="mostrar" onclick="ocultarSmartphone()"  />
+      
     </section>
+
     <footer>
       <small>Derechos Reservados</small>
       <address>
@@ -43,5 +56,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="./scripts/main.js" ></script>
+    <script src="./scripts/webcam.js" ></script>
   </body>
 </html>
