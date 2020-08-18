@@ -5,40 +5,40 @@
   <title>Hola Mundo!</title>
 </head>
   <body>
-    <img id="recamara" width="550" height="550" src="../imagenes/Imagenes_originales/Cuarto.jpg" alt="Recamara">
+
+    <img id="recamara" width="550" height="550" src="../imagenes/Cuarto_1.png" alt="Recamara">
+
     <canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;">
     Your browser does not support the canvas element.
     </canvas>
 
     <script>
+    /*
       function getRandomInt(min, max) {
           return Math.floor(Math.random() * (max - min)) + min;
       }
+      */
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      var imgenRecamara=document.getElementById("recamara");
+
       window.onload = function() {
-
-        var canvas = document.getElementById("myCanvas");
-        var ctx = canvas.getContext("2d");
-        var imgenRecamara=document.getElementById("recamara");
-
 
         ctx.drawImage(imgenRecamara, 10, 10);
 
-        var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
-        var imgArray=imgData.data;
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var data = imageData.data;
 
-        console.log('Hola, primer log',imgData );
-
-        for(var i=0;i<imgArray.length;i+=4){
-
-          imgArray[i]=255-imgArray[i];
-          imgArray[i+1]=255-imgArray[i+1];
-          imgArray[i+2]=255-255-imgArray[i+2];
-          imgArray[i+3]=100;
-
-
+        for (var i = 0; i < data.length; i += 4) {
+            data[i]     = 255 - data[i];     // red
+            data[i + 1] = 255 - data[i + 1]; // green
+            data[i + 2] = 255 - data[i + 2]; // blue
         }
-        ctx.putImageData(imageData, 10, 10);
+        ctx.putImageData(imageData, 0, 0);
       };
+
+
+
       /*ctx.beginPath();
       ctx.arc(95,50,40,0,2*Math.PI);
       ctx.stroke();
