@@ -11,6 +11,12 @@
     <canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;">
     Your browser does not support the canvas element.
     </canvas>
+    <div  id="botoneraDeTransformaciones">
+      <input id="btn-t-binarizacionB-N" type="submit" value="BinarizarBN" onclick="binarizarBN()"  />
+      <input id="btn-t-B-N" type="submit" value="Blanco y Negro" onclick="byN()"  />
+      <input id="btn-t-invertir" type="submit" value="Invertir" onclick="invertirImagen()"  />
+      <input id="btn-t-restaurar" type="submit" value="Restaurar" onclick="restaurar()"  />
+    </div>
 
     <script>
     /*
@@ -26,6 +32,51 @@
 
         ctx.drawImage(imgenRecamara, 10, 10);
 
+
+      };
+
+      binarizarBN(){
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var data = imageData.data;
+
+        for (var i = 0; i < data.length; i += 4) {
+          var rojo= data[i] ;
+          var verde=data[i+1];
+          var azul=data[i + 2];
+          if((rojo+verde+azul)/3<125){
+            data[i]     = 0;     // red
+            data[i + 1] = 0; // green
+            data[i + 2] = 0; // blue
+          }
+          else {
+            data[i]     = 255;     // red
+            data[i + 1] = 255; // green
+            data[i + 2] = 255; // blue
+          }
+
+        }
+        ctx.putImageData(imageData, 0, 0);
+
+
+      }
+
+      byN(){
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var data = imageData.data;
+
+        for (var i = 0; i < data.length; i += 4) {
+          var pixelGris=(data[i]+data[i+1]+data[i+2])/3;
+            data[i]     = pixelGris;     // red
+            data[i + 1] = pixelGris; // green
+            data[i + 2] = pixelGris; // blue
+
+
+        }
+        ctx.putImageData(imageData, 0, 0);
+
+
+      }
+      invertirImagen(){
         var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         var data = imageData.data;
 
@@ -35,7 +86,10 @@
             data[i + 2] = 255 - data[i + 2]; // blue
         }
         ctx.putImageData(imageData, 0, 0);
-      };
+      }
+      restaurar(){
+        ctx.drawImage(imgenRecamara, 10, 10);
+      }
 
 
 
